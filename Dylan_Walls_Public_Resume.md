@@ -2,7 +2,7 @@
 
 **AI Implementation & Operations Specialist**  
 South Jordan, Utah  
-[LinkedIn](https://www.linkedin.com/in/dylan-walls-6b634a3b6) · [Portfolio](https://outlaw-intelligence.github.io/dylan-walls-portfolio/) · [GitHub](https://github.com/Outlaw-Intelligence/outlaw-audit)  
+[LinkedIn](https://www.linkedin.com/in/dylan-walls-6b634a3b6) · [Portfolio](https://outlaw-intelligence.github.io/outlaw-audit/) · [GitHub](https://github.com/Outlaw-Intelligence/outlaw-audit)  
 **Active Secret Security Clearance**
 
 ---
