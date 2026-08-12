@@ -24,6 +24,6 @@ Then open <http://localhost:8080>.
 
 - `index.html` — portfolio site
 - `airi-case-study.md` — sanitized AIRI project case study
-- `Dylan_Walls_Public_Resume.pdf` — public résumé
+- `Dylan_Walls_Public_Resume-v2.pdf` — public résumé
 - `Dylan_Walls_Public_Resume.md` — accessible text version
 - `LICENSE` — MIT license
