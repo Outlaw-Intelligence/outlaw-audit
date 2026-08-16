@@ -22,7 +22,7 @@ Start here:
 - [`olympus/security.md`](olympus/security.md) — repository, renderer, profile, network, model, audio, and release lockdown.
 - [`olympus/acceptance.md`](olympus/acceptance.md) — evidence gates before an avatar lane can be called live.
 - [`olympus/avatar.schema.json`](olympus/avatar.schema.json) — manifest contract.
-- [`olympus/avatars/`](olympus/avatars/) — sanitized Zeus and Odin manifests plus the user-provided Thor PNG preserved byte-for-byte.
+- [`olympus/avatars/`](olympus/avatars/) — sanitized Zeus and Odin manifests, the untouched Thor source PNG, and the transparent-corner `thor-2d.png` static avatar export.
 - [`olympus/architecture.mmd`](olympus/architecture.mmd) — system flow diagram.
 
 Validate the public contract locally:
@@ -41,6 +41,8 @@ POLICY_OK direct_shell=false direct_filesystem=false direct_browser=false direct
 ## Public safety boundary
 
 This repository contains no credentials, tokens, cookies, private prompts, personal memory, raw transcripts, audio, machine paths, private ports, service logs, or private runtime assets. Private avatar files, voices, and environment values belong outside the repository and are referenced through owner-only environment variables.
+
+The public Thor source is preserved at `olympus/avatars/thor.png`. The static 2D export is `olympus/avatars/thor-2d.png`: the artwork and dimensions are preserved while the outside corners are transparent for clean avatar placement. This is a static 2D portrait, not a rigged Live2D model.
 
 The manifests intentionally deny direct shell, filesystem, browser, hardware, and unrestricted network access to the avatar adapter. Handoffs remain structured and require human approval.
 

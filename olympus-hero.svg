@@ -94,8 +94,8 @@
     <rect x="1120" y="0" width="740" height="900" fill="url(#grain)" opacity=".4"/>
   </g>
 
-  <!-- Thor source image: preserved byte-for-byte from the user attachment. -->
-  <image href="olympus/avatars/thor.png" x="1165" y="145" width="650" height="650" preserveAspectRatio="xMidYMid meet"/>
+  <!-- Thor 2D export derived from the user attachment; original remains byte-for-byte at thor.png. -->
+  <image href="olympus/avatars/thor-2d.png" x="1165" y="145" width="650" height="650" preserveAspectRatio="xMidYMid meet"/>
 
   <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" text-anchor="middle">
     <text x="900" y="56" fill="#f2ce79" font-size="16" letter-spacing="9">OUTLAW INTELLIGENCE</text>
