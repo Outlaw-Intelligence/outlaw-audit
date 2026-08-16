@@ -1,123 +1,104 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">Olympus — Zeus, Odin, and Thor above Mount Olympus</title>
-  <desc id="desc">An original dark cinematic illustration of a luminous Mount Olympus command platform with Zeus in the center, custom Odin on the left, and custom Thor on the right.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 980" role="img" aria-labelledby="title desc">
+  <title id="title">Olympus avatar council: Zeus, Odin, and Thor</title>
+  <desc id="desc">Three original mythic avatar portraits in circular storm medallions: Zeus as commander, Odin as counsel, and Thor as builder.</desc>
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#050817"/>
-      <stop offset="0.58" stop-color="#11172d"/>
-      <stop offset="1" stop-color="#251a2e"/>
-    </linearGradient>
-    <radialGradient id="halo" cx="50%" cy="46%" r="55%">
-      <stop offset="0" stop-color="#fff6cf" stop-opacity=".95"/>
-      <stop offset=".18" stop-color="#8ce8ff" stop-opacity=".45"/>
-      <stop offset=".52" stop-color="#9572ff" stop-opacity=".11"/>
-      <stop offset="1" stop-color="#000" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="mountain" x1="0" y1="0" x2="0" y2="1">
-      <stop stop-color="#6b719b"/>
-      <stop offset=".5" stop-color="#252742"/>
-      <stop offset="1" stop-color="#080a16"/>
-    </linearGradient>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#fff2bd"/>
-      <stop offset=".4" stop-color="#f5c96b"/>
-      <stop offset="1" stop-color="#9c5c2c"/>
-    </linearGradient>
-    <linearGradient id="zeus" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#eafaff"/>
-      <stop offset=".45" stop-color="#82d9ef"/>
-      <stop offset="1" stop-color="#4254a7"/>
-    </linearGradient>
-    <linearGradient id="odin" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#d9dde5"/>
-      <stop offset=".42" stop-color="#69748e"/>
-      <stop offset="1" stop-color="#252b48"/>
-    </linearGradient>
-    <linearGradient id="thor" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#f5d09a"/>
-      <stop offset=".4" stop-color="#b96e4d"/>
-      <stop offset="1" stop-color="#492e55"/>
-    </linearGradient>
-    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="35"/></filter>
-    <pattern id="stars" width="180" height="130" patternUnits="userSpaceOnUse">
-      <circle cx="12" cy="26" r="1.4" fill="#fff" opacity=".7"/><circle cx="88" cy="71" r="1" fill="#c9f5ff" opacity=".55"/><circle cx="154" cy="35" r="1.7" fill="#ffe7aa" opacity=".6"/><circle cx="132" cy="112" r=".8" fill="#fff" opacity=".55"/>
-    </pattern>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d9b86d"/></marker>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#02050d"/><stop offset=".55" stop-color="#0d162b"/><stop offset="1" stop-color="#03050b"/></linearGradient>
+    <radialGradient id="storm" cx="50%" cy="36%"><stop stop-color="#b9f3ff" stop-opacity=".4"/><stop offset=".25" stop-color="#236ba1" stop-opacity=".34"/><stop offset=".68" stop-color="#111d3c" stop-opacity=".92"/><stop offset="1" stop-color="#02050c"/></radialGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7fbff"/><stop offset=".22" stop-color="#98afc8"/><stop offset=".52" stop-color="#28364f"/><stop offset=".8" stop-color="#11192d"/><stop offset="1" stop-color="#c7d8e8"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff2ae"/><stop offset=".35" stop-color="#eac16e"/><stop offset=".68" stop-color="#70482d"/><stop offset="1" stop-color="#f6da8d"/></linearGradient>
+    <linearGradient id="redmetal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe1ad"/><stop offset=".3" stop-color="#b56c59"/><stop offset=".72" stop-color="#432c43"/><stop offset="1" stop-color="#e0ae76"/></linearGradient>
+    <linearGradient id="ice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9fdff"/><stop offset=".35" stop-color="#86dff5"/><stop offset=".7" stop-color="#314e89"/><stop offset="1" stop-color="#bd9dff"/></linearGradient>
+    <filter id="electric" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="aura" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="26"/></filter>
+    <clipPath id="left"><circle cx="310" cy="470" r="350"/></clipPath>
+    <clipPath id="center"><circle cx="900" cy="470" r="350"/></clipPath>
+    <clipPath id="right"><circle cx="1490" cy="470" r="350"/></clipPath>
+    <pattern id="grain" width="110" height="90" patternUnits="userSpaceOnUse"><circle cx="15" cy="21" r="1" fill="#fff" opacity=".4"/><circle cx="74" cy="60" r="1.5" fill="#8edfff" opacity=".35"/><circle cx="96" cy="11" r=".8" fill="#fff" opacity=".6"/><path d="M34 84l8-2" stroke="#b5d8ff" opacity=".16"/></pattern>
   </defs>
-  <rect width="1600" height="900" fill="url(#sky)"/>
-  <rect width="1600" height="620" fill="url(#stars)" opacity=".75"/>
-  <ellipse cx="800" cy="430" rx="620" ry="440" fill="url(#halo)"/>
-  <circle cx="800" cy="395" r="190" fill="#92f1ff" opacity=".08" filter="url(#soft)"/>
-  <path d="M0 620L170 500L260 566L420 375L555 560L720 330L800 485L920 350L1080 575L1240 422L1390 550L1600 448V900H0z" fill="url(#mountain)" opacity=".96"/>
-  <path d="M0 665L175 555L280 630L420 435L550 630L720 405L800 540L930 430L1088 646L1240 505L1390 620L1600 530V900H0z" fill="#0a0d1a"/>
-  <path d="M605 651L800 370L995 651Z" fill="#15172a" stroke="#8a8ab3" stroke-opacity=".42" stroke-width="3"/>
-  <path d="M670 651L800 442L930 651" fill="none" stroke="#f2d37d" stroke-opacity=".48" stroke-width="4"/>
-  <g opacity=".9" stroke="#8deaff" stroke-width="2" fill="none">
-    <path d="M170 165C420 54 612 146 800 72C1020 -8 1210 92 1440 160" opacity=".35"/>
-    <path d="M100 255C350 148 560 248 790 166C1060 70 1230 210 1510 238" opacity=".22"/>
+  <rect width="1800" height="980" fill="url(#bg)"/>
+  <ellipse cx="900" cy="500" rx="850" ry="410" fill="#2a4a82" opacity=".13" filter="url(#aura)"/>
+  <path d="M0 230C300 140 470 270 720 175S1160 160 1410 230S1710 155 1800 180" fill="none" stroke="#72c4ef" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M0 790C280 690 470 795 750 720S1180 700 1460 785S1690 710 1800 745" fill="none" stroke="#bc8cff" stroke-opacity=".15" stroke-width="2"/>
+
+  <!-- Shared medallion frame -->
+  <g fill="none" stroke-linecap="round">
+    <circle cx="310" cy="470" r="373" stroke="#0a0f1e" stroke-width="28"/><circle cx="310" cy="470" r="362" stroke="#e5bf70" stroke-width="4"/><circle cx="310" cy="470" r="353" stroke="#75dff5" stroke-opacity=".7" stroke-width="2"/>
+    <circle cx="900" cy="470" r="373" stroke="#0a0f1e" stroke-width="28"/><circle cx="900" cy="470" r="362" stroke="#f2ce79" stroke-width="4"/><circle cx="900" cy="470" r="353" stroke="#75dff5" stroke-opacity=".7" stroke-width="2"/>
+    <circle cx="1490" cy="470" r="373" stroke="#0a0f1e" stroke-width="28"/><circle cx="1490" cy="470" r="362" stroke="#e5bf70" stroke-width="4"/><circle cx="1490" cy="470" r="353" stroke="#75dff5" stroke-opacity=".7" stroke-width="2"/>
   </g>
-  <g transform="translate(800 256)">
-    <circle r="92" fill="#dffcff" opacity=".14" filter="url(#glow)"/>
-    <path d="M-22-155L4-104L-18-78L45-30L5-7L31 43L-22 26L-42 86L-58 35L-101 45L-73 3L-119-29L-64-38L-75-88L-31-62Z" fill="#efffff" stroke="#7adfff" stroke-width="3" filter="url(#glow)"/>
-    <circle r="17" fill="#fff8cf"/>
+
+  <!-- Odin: counsel, left -->
+  <g clip-path="url(#left)">
+    <circle cx="310" cy="470" r="350" fill="url(#storm)"/>
+    <path d="M-30 480L190 270L265 337L360 185L450 315L650 235L570 700H-20Z" fill="#071022" opacity=".8"/>
+    <path d="M-40 380L160 200L240 282L340 130L460 285L660 210" fill="none" stroke="#8bc7e8" stroke-opacity=".42" stroke-width="3"/>
+    <path d="M20 155L180 310L114 334L251 389L135 422L264 515L70 446" fill="none" stroke="#b9f6ff" stroke-width="6" filter="url(#electric)"/>
+    <path d="M545 145L450 271L515 294L407 356L475 398L352 500" fill="none" stroke="#6edbff" stroke-width="5" filter="url(#electric)"/>
+    <path d="M88 780C84 578 131 426 193 340C225 294 276 265 335 280C433 304 482 447 513 780Z" fill="url(#steel)" stroke="#9db0c9" stroke-width="4"/>
+    <path d="M173 365L103 449L160 477L112 542L218 514M415 365L501 447L443 477L491 542L381 514" fill="#202f50" stroke="#b8cce0" stroke-width="4"/>
+    <path d="M184 291C187 185 242 113 320 114C401 115 453 188 449 292L407 393L206 393Z" fill="#cbd8e7" stroke="#eff8ff" stroke-width="4"/>
+    <path d="M187 239C216 132 280 83 350 111C405 132 450 190 442 245L379 208L340 151L285 214Z" fill="#7b8ca9"/>
+    <path d="M195 210L123 130L215 155L278 70L318 151L395 87L430 174" fill="#e7f3ff" stroke="#9eafc6" stroke-width="5"/>
+    <path d="M219 266Q254 242 286 266" stroke="#273552" stroke-width="10"/><path d="M357 265L405 260" stroke="#273552" stroke-width="10"/>
+    <circle cx="383" cy="260" r="13" fill="#fff1a9" stroke="#82e6ff" stroke-width="5" filter="url(#electric)"/><path d="M226 275L204 318" stroke="#293653" stroke-width="13"/>
+    <path d="M225 321Q316 387 410 320L422 444Q318 512 211 443Z" fill="#71849e" stroke="#cfdae8" stroke-width="4"/>
+    <path d="M246 399L315 432L380 399" fill="none" stroke="#edcc78" stroke-width="7"/>
+    <path d="M281 438L305 548L329 438" fill="#182846" stroke="#d7bc70" stroke-width="3"/>
+    <path d="M96 778L158 564L218 592L202 778M524 778L461 564L402 592L418 778" fill="#121f39" stroke="#9bb2ce" stroke-width="5"/>
+    <path d="M490 720L592 170" stroke="#d4e6f8" stroke-width="11"/><path d="M592 170L638 201L580 211Z" fill="#d9eafa" stroke="#fff" stroke-width="3"/>
+    <path d="M615 223Q668 183 700 228Q663 245 624 248M610 231Q663 274 694 233Q655 216 617 212" fill="#10182a" stroke="#86a1bd" stroke-width="3"/>
+    <rect x="0" y="0" width="620" height="900" fill="url(#grain)" opacity=".42"/>
   </g>
-  <!-- Olympus platform -->
-  <g transform="translate(800 650)">
-    <ellipse cx="0" cy="105" rx="500" ry="58" fill="#05060d" stroke="#f0ca73" stroke-width="3" stroke-opacity=".7"/>
-    <ellipse cx="0" cy="82" rx="420" ry="44" fill="#1b1b31" stroke="#70e7ee" stroke-width="2" stroke-opacity=".55"/>
-    <path d="M-375 83H375L330 118H-330Z" fill="#0d1020" stroke="#e7bb61" stroke-opacity=".55"/>
-    <path d="M-315 86L-257 30L-196 86M-168 86L-108 30L-47 86M47 86L108 30L168 86M196 86L257 30L315 86" fill="none" stroke="#a8c8d3" stroke-opacity=".42" stroke-width="7"/>
-    <g stroke="#f1ca72" stroke-width="2" opacity=".75"><path d="M-300 101H300"/><path d="M-250 113H250"/></g>
+
+  <!-- Zeus: commander, center -->
+  <g clip-path="url(#center)">
+    <circle cx="900" cy="470" r="350" fill="url(#storm)"/>
+    <path d="M530 360L720 170L795 288L906 130L1004 282L1178 184L1260 410L1180 770H548Z" fill="#071324" opacity=".82"/>
+    <path d="M548 284L685 195L761 266L900 110L1025 269L1158 190L1240 305" fill="none" stroke="#a5e8ff" stroke-width="4" opacity=".65"/>
+    <path d="M552 190L710 326L660 350L800 399L708 444L849 518L620 460" fill="none" stroke="#f2fbff" stroke-width="8" filter="url(#electric)"/>
+    <path d="M1250 168L1130 305L1195 334L1068 395L1140 434L1005 520" fill="none" stroke="#71dcff" stroke-width="7" filter="url(#electric)"/>
+    <path d="M639 800C645 594 690 429 755 338C789 291 845 264 908 278C1019 302 1092 478 1136 800Z" fill="url(#gold)" stroke="#fff0a8" stroke-width="5"/>
+    <path d="M680 389L598 475L666 502L610 568L730 535M1087 389L1170 475L1105 502L1165 568L1040 535" fill="#a37a3e" stroke="#f7d783" stroke-width="5"/>
+    <path d="M742 321C746 196 812 116 899 116C993 116 1056 201 1050 322L1008 445L791 445Z" fill="#dce8f2" stroke="#fff" stroke-width="5"/>
+    <path d="M741 244C768 141 835 75 908 105C978 132 1037 197 1046 263L974 213L922 147L861 222Z" fill="#eefaff"/>
+    <path d="M756 205L690 110L780 148L839 54L886 149L953 65L1012 167L1074 110L1036 243" fill="url(#gold)" stroke="#fff0aa" stroke-width="5"/>
+    <path d="M775 281Q814 255 848 278" stroke="#233961" stroke-width="11"/><path d="M948 278Q983 254 1025 277" stroke="#233961" stroke-width="11"/>
+    <circle cx="813" cy="278" r="14" fill="#f9ffff" stroke="#83eaff" stroke-width="6" filter="url(#electric)"/><circle cx="986" cy="278" r="14" fill="#f9ffff" stroke="#83eaff" stroke-width="6" filter="url(#electric)"/>
+    <path d="M780 335Q897 421 1014 335L1017 459Q899 548 780 460Z" fill="#c8d9e8" stroke="#f2fbff" stroke-width="5"/>
+    <path d="M817 408L900 445L981 408" fill="none" stroke="#57432d" stroke-width="9"/><path d="M824 457L898 485L976 457" fill="none" stroke="#edcc78" stroke-width="8"/>
+    <path d="M900 94V-15M900-15L871 28M900-15L929 28" stroke="#fff7c1" stroke-width="10" stroke-linecap="round" filter="url(#electric)"/>
+    <path d="M704 798L770 556L836 588L816 798M1096 798L1030 556L964 588L984 798" fill="#385080" stroke="#dceeff" stroke-width="5"/>
+    <path d="M1150 740L1180 210" stroke="#e1efff" stroke-width="13"/><path d="M1180 210L1233 252L1174 263Z" fill="#f5faff" stroke="#b2edff" stroke-width="4"/><path d="M1150 258Q1200 206 1242 254Q1203 280 1158 280" fill="#c48b43" stroke="#ffe29a" stroke-width="4"/>
+    <rect x="530" y="0" width="740" height="900" fill="url(#grain)" opacity=".4"/>
   </g>
-  <!-- Zeus, center commander -->
-  <g transform="translate(800 486)">
-    <path d="M-93 160C-100 73-85 6-57-48C-43-74-24-91 0-93C24-91 43-74 57-48C85 6 100 73 93 160Z" fill="url(#zeus)" stroke="#c8f9ff" stroke-width="3"/>
-    <path d="M-64-44C-47-103-26-131 0-131C26-131 47-103 64-44C40-20 22-8 0-8C-22-8-40-20-64-44Z" fill="#d8fbff" stroke="#75d8ee" stroke-width="3"/>
-    <path d="M-40-83L-73-155L-28-126L0-172L28-126L73-155L40-83" fill="url(#gold)" stroke="#ffedaa" stroke-width="3"/>
-    <path d="M-23-59L-11-47M23-59L11-47" stroke="#1b3262" stroke-width="5" stroke-linecap="round"/><path d="M-21-19Q0-4 21-19" fill="none" stroke="#1b3262" stroke-width="4"/>
-    <path d="M-74 25L-148 9L-117 53L-159 83L-79 83" fill="#b9f5ff" stroke="#77d9ef" stroke-width="3"/>
-    <path d="M74 25L148 9L117 53L159 83L79 83" fill="#b9f5ff" stroke="#77d9ef" stroke-width="3"/>
-    <path d="M-50 112L-78 188M50 112L78 188" stroke="#99e9f8" stroke-width="20" stroke-linecap="round"/><path d="M-95 188H-38M38 188H95" stroke="#f2c96f" stroke-width="12" stroke-linecap="round"/>
-    <path d="M-150 98L-170 134L-150 170L-130 134Z" fill="#fff4bd" stroke="#8de7f3" stroke-width="2" filter="url(#glow)"/>
-    <path d="M0-150V-245M0-245L-26-212M0-245L26-212" stroke="#fff5b3" stroke-width="7" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Thor: builder, right -->
+  <g clip-path="url(#right)">
+    <circle cx="1490" cy="470" r="350" fill="url(#storm)"/>
+    <path d="M1120 470L1302 258L1390 326L1490 165L1608 321L1765 235L1840 480L1765 790H1120Z" fill="#101224" opacity=".84"/>
+    <path d="M1140 274L1305 188L1376 272L1491 140L1618 278L1750 201L1812 318" fill="none" stroke="#84d9f4" stroke-width="4" opacity=".62"/>
+    <path d="M1150 157L1287 310L1237 338L1386 391L1291 444L1433 510L1210 461" fill="none" stroke="#79dfff" stroke-width="7" filter="url(#electric)"/>
+    <path d="M1790 184L1669 310L1737 339L1605 402L1670 442L1545 531" fill="none" stroke="#f3d281" stroke-width="6" filter="url(#electric)"/>
+    <path d="M1218 802C1228 594 1270 444 1334 351C1370 300 1421 274 1491 281C1608 293 1680 472 1726 802Z" fill="url(#redmetal)" stroke="#ffdda0" stroke-width="5"/>
+    <path d="M1275 400L1190 470L1262 505L1205 568L1325 537M1690 400L1770 470L1706 505L1764 568L1640 537" fill="#754354" stroke="#ffc891" stroke-width="5"/>
+    <path d="M1327 317C1334 193 1395 119 1485 119C1579 119 1644 207 1639 324L1594 426L1373 426Z" fill="#d58a6d" stroke="#ffe0b1" stroke-width="5"/>
+    <path d="M1328 244C1361 151 1412 87 1489 111C1564 135 1623 201 1636 270L1570 217L1518 158L1459 225Z" fill="#ba6857"/>
+    <path d="M1318 214L1261 124L1349 157L1403 71L1450 151L1514 70L1578 166L1640 124L1618 243" fill="url(#redmetal)" stroke="#ffe0a7" stroke-width="5"/>
+    <path d="M1355 279Q1390 254 1428 279" stroke="#4c2b43" stroke-width="11"/><path d="M1531 279Q1574 253 1610 279" stroke="#4c2b43" stroke-width="11"/>
+    <circle cx="1391" cy="277" r="13" fill="#fdf5cf" stroke="#77e1ff" stroke-width="6" filter="url(#electric)"/><circle cx="1571" cy="277" r="13" fill="#fdf5cf" stroke="#77e1ff" stroke-width="6" filter="url(#electric)"/>
+    <path d="M1368 334Q1487 415 1605 334L1609 463Q1489 552 1368 460Z" fill="#b26d62" stroke="#ffe1b0" stroke-width="5"/>
+    <path d="M1400 409Q1488 461 1575 409" fill="none" stroke="#4a2b3e" stroke-width="10"/><path d="M1404 461L1488 491L1570 461" fill="none" stroke="#f1cb78" stroke-width="8"/>
+    <path d="M1280 798L1342 560L1410 594L1392 798M1705 798L1640 560L1572 594L1592 798" fill="#602f50" stroke="#f2c490" stroke-width="5"/>
+    <g transform="translate(1260 430) rotate(-18)"><rect x="-40" y="-105" width="80" height="255" rx="18" fill="#607f9e" stroke="#e9f7ff" stroke-width="6"/><path d="M-127-105H127V-42H-127Z" fill="#98b6c9" stroke="#e9f7ff" stroke-width="6"/><path d="M-102 150H102V195H-102Z" fill="#3c5879" stroke="#bddbea" stroke-width="5"/><circle cx="0" cy="-73" r="27" fill="none" stroke="#d9eff9" stroke-width="6"/></g>
+    <path d="M1256 355L1229 388M1228 380L1209 400" stroke="#ffe3a2" stroke-width="6" stroke-linecap="round" filter="url(#electric)"/>
+    <rect x="1120" y="0" width="740" height="900" fill="url(#grain)" opacity=".4"/>
   </g>
-  <!-- Odin, left custom avatar -->
-  <g transform="translate(430 530)">
-    <path d="M-118 135C-117 35-101-45-52-99C-30-123-11-131 20-127C76-120 112-67 119 31L98 160H-100Z" fill="url(#odin)" stroke="#d2dbea" stroke-width="3"/>
-    <path d="M-60-78C-51-145-22-177 28-173C78-168 103-134 99-74L67-22H-32Z" fill="#b7c3d1" stroke="#e7edf5" stroke-width="3"/>
-    <path d="M-29-111L-56-184L-6-150L37-205L61-145L110-164L76-92" fill="#e6edf4" stroke="#9ba8bf" stroke-width="3"/>
-    <path d="M-30-97L-50-58" stroke="#2a3150" stroke-width="12"/><path d="M-52-52Q-24-39 2-53" fill="none" stroke="#27304c" stroke-width="5"/><path d="M45-57L64-57" stroke="#27304c" stroke-width="5"/>
-    <circle cx="54" cy="-53" r="9" fill="#ffdd80" stroke="#fff0b1" stroke-width="3"/>
-    <path d="M-74 23L-143 76L-107 87L-142 136L-66 114" fill="#596681" stroke="#d0dbea" stroke-width="3"/>
-    <path d="M72 20L145 68L111 85L140 137L66 111" fill="#596681" stroke="#d0dbea" stroke-width="3"/>
-    <path d="M-45 120L-65 186M46 120L66 186" stroke="#8d9cb6" stroke-width="22" stroke-linecap="round"/><path d="M-83 186H-32M32 186H83" stroke="#d7b46a" stroke-width="11" stroke-linecap="round"/>
-    <path d="M-145 10Q-192 41-160 71Q-126 41-145 10ZM124 3Q181 34 148 72Q117 42 124 3Z" fill="#101426" stroke="#8996ad" stroke-width="3"/>
-    <path d="M-176-5L-185 28M159-10L170 24" stroke="#b4c1d5" stroke-width="4"/>
-  </g>
-  <!-- Thor, right custom avatar -->
-  <g transform="translate(1170 530)">
-    <path d="M-120 157C-119 42-92-47-48-91C-23-116 13-122 48-99C95-68 116 25 119 157Z" fill="url(#thor)" stroke="#ffdba1" stroke-width="3"/>
-    <path d="M-70-68C-64-141-27-174 26-169C77-164 103-125 96-62L67-10H-40Z" fill="#f0c18e" stroke="#ffe0ad" stroke-width="3"/>
-    <path d="M-73-90L-123-146L-53-133L-17-196L21-135L92-149L50-84" fill="#b66a50" stroke="#f5c48e" stroke-width="4"/>
-    <path d="M-42-91L-60-50M45-92L62-50" stroke="#532c41" stroke-width="9"/><path d="M-49-34Q0-6 49-34" fill="none" stroke="#532c41" stroke-width="5"/>
-    <path d="M-76 20L-158-13L-142 43L-185 64L-87 93" fill="#9d5260" stroke="#f5bd8c" stroke-width="3"/>
-    <path d="M76 20L158-13L142 43L185 64L87 93" fill="#9d5260" stroke="#f5bd8c" stroke-width="3"/>
-    <path d="M-47 115L-78 187M47 115L78 187" stroke="#a96a61" stroke-width="24" stroke-linecap="round"/><path d="M-96 188H-34M34 188H96" stroke="#f2c86f" stroke-width="12" stroke-linecap="round"/>
-    <g transform="translate(155 10) rotate(18)"><rect x="-18" y="-82" width="36" height="140" rx="8" fill="#a8c3d5" stroke="#e7f8ff" stroke-width="4"/><path d="M-52-82H52V-45H-52Z" fill="#aec7d8" stroke="#e7f8ff" stroke-width="4"/><path d="M-42 57H42V82H-42Z" fill="#6e8fa8" stroke="#dff7ff" stroke-width="3"/></g>
-    <path d="M-160-17L-177 10M-178 2L-193 17" stroke="#ffe29c" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
-  </g>
-  <!-- Connection filaments -->
-  <g fill="none" stroke="#d9b86d" stroke-width="2" opacity=".45" stroke-dasharray="6 12">
-    <path d="M590 575C640 520 675 500 700 480" marker-end="url(#arrow)"/><path d="M1010 575C960 520 925 500 900 480" marker-end="url(#arrow)"/>
-  </g>
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">
-    <text x="800" y="805" fill="#fff0b1" font-size="34" letter-spacing="12">OLYMPUS</text>
-    <text x="800" y="842" fill="#9adce8" font-size="14" letter-spacing="5">OUTLAW INTELLIGENCE · HERMES AVATAR COMMAND</text>
-    <text x="430" y="770" fill="#cbd5e1" font-size="17" letter-spacing="4">ODIN / COUNSEL</text>
-    <text x="800" y="770" fill="#dffcff" font-size="17" letter-spacing="4">ZEUS / COMMAND</text>
-    <text x="1170" y="770" fill="#ffd8a0" font-size="17" letter-spacing="4">THOR / BUILD</text>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" text-anchor="middle">
+    <text x="900" y="56" fill="#f2ce79" font-size="16" letter-spacing="9">OUTLAW INTELLIGENCE</text>
+    <text x="900" y="910" fill="#eefbff" font-size="34" letter-spacing="15">OLYMPUS</text>
+    <text x="310" y="875" fill="#a9c9de" font-size="16" letter-spacing="5">ODIN · COUNSEL</text>
+    <text x="900" y="875" fill="#dffcff" font-size="16" letter-spacing="5">ZEUS · COMMAND</text>
+    <text x="1490" y="875" fill="#ffd49b" font-size="16" letter-spacing="5">THOR · BUILD</text>
   </g>
 </svg>
