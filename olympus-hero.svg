@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 900" role="img" aria-labelledby="title desc">
-  <title id="title">Olympus, anchored by the Thor avatar</title>
-  <desc id="desc">A restrained cinematic Olympus banner built around the supplied Thor 2D avatar, with a dark celestial field, Mount Olympus silhouette, gold geometry, and the three Hermes authority lanes named below.</desc>
+  <title id="title">Olympus backdrop for the Thor avatar</title>
+  <desc id="desc">A restrained cinematic Olympus backdrop for the supplied Thor 2D avatar, with a dark celestial field, Mount Olympus silhouette, gold geometry, and the three Hermes authority lanes named below.</desc>
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#03050d"/><stop offset=".52" stop-color="#10192e"/><stop offset="1" stop-color="#050711"/></linearGradient>
     <radialGradient id="halo" cx="50%" cy="42%" r="50%"><stop stop-color="#bdf5ff" stop-opacity=".38"/><stop offset=".26" stop-color="#438dd0" stop-opacity=".2"/><stop offset=".62" stop-color="#6d4bb2" stop-opacity=".12"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
@@ -42,9 +42,6 @@
     <path d="M1225 224L1145 296L1180 322L1084 370L1147 407L1052 470" stroke="#8deaff" stroke-width="4" opacity=".62"/>
     <path d="M900 55V126M900 662V733" stroke="#f9dc88" stroke-width="4" opacity=".78"/>
   </g>
-
-  <!-- supplied Thor 2D avatar: unchanged artwork, clean transparent-corner export -->
-  <image href="olympus/avatars/thor-2d.png" x="570" y="64" width="660" height="660" preserveAspectRatio="xMidYMid meet"/>
 
   <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" text-anchor="middle">
     <text x="900" y="54" fill="#f2cf7c" font-size="15" letter-spacing="9">OUTLAW INTELLIGENCE</text>

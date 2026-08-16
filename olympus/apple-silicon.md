@@ -78,7 +78,7 @@ The public manifests use these environment references instead of real values. Ke
 - user-facing conversation and planning;
 - status reads only by default;
 - no direct shell, filesystem, browser, hardware, or arbitrary subprocess access through AIRI;
-- decision authority remains with Dylan and the Hermes host.
+- decision authority remains with me and the Hermes host;
 
 ### Odin lane
 

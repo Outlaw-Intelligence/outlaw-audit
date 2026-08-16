@@ -1,8 +1,8 @@
 # Olympus
 
-Olympus is Outlaw Intelligence's owned avatar and Hermes integration build. AIRI is the presentation layer; Hermes remains the authority for conversation, planning, counsel, and implementation handoffs.
+I built Olympus as my avatar and Hermes integration build. I use AIRI as the presentation layer, while Hermes remains my authority for conversation, planning, counsel, and implementation handoffs.
 
-This is a live build guide and implementation contract—not a case study. It is written so another Apple Silicon operator can reproduce the architecture without receiving private credentials, machine paths, ports, prompts, or fleet state.
+This is my live build guide and implementation contract. I wrote it so another Apple Silicon operator can reproduce the architecture without receiving private credentials, machine paths, ports, prompts, or fleet state.
 
 ## The three avatars
 
