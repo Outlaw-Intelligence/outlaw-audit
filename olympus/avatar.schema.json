@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://outlaw-intelligence.github.io/outlaw-audit/olympus/avatar.schema.json",
+  "title": "Olympus Avatar Manifest",
+  "description": "Public-safe contract for an AIRI-rendered Hermes avatar lane.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "displayName", "role", "authority", "avatar", "voice", "capabilities", "adapter", "security"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]{2,31}$" },
+    "displayName": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "role": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "authority": { "enum": ["decision", "counsel", "implementation"] },
+    "avatar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["renderer", "assetRef", "stateModel"],
+      "properties": {
+        "renderer": { "const": "airi" },
+        "assetRef": { "type": "string", "pattern": "^\\$\\{OLYMPUS_[A-Z0-9_]+\\}$" },
+        "stateModel": { "enum": ["operator", "counsel", "builder"] }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provider", "voiceRef", "language"],
+      "properties": {
+        "provider": { "const": "local-adapter" },
+        "voiceRef": { "type": "string", "pattern": "^\\$\\{OLYMPUS_[A-Z0-9_]+\\}$" },
+        "language": { "type": "string", "pattern": "^[a-z]{2}(-[A-Z]{2})?$" }
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "enum": ["conversation", "planning", "analysis", "red-team", "architecture-review", "status-read", "implementation-planning", "code-review", "bounded-build-request"] }
+    },
+    "adapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["transport", "bind", "profileRef", "requestAllowlist"],
+      "properties": {
+        "transport": { "const": "loopback-http" },
+        "bind": { "const": "127.0.0.1" },
+        "profileRef": { "type": "string", "pattern": "^\\$\\{OLYMPUS_[A-Z0-9_]+\\}$" },
+        "requestAllowlist": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "enum": ["health", "chat", "avatar-state", "handoff", "status-read"] }
+        }
+      }
+    },
+    "security": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowShell", "allowFilesystem", "allowBrowser", "allowHardware", "requiresHumanApproval", "maxRequestBytes", "timeoutMs"],
+      "properties": {
+        "allowShell": { "const": false },
+        "allowFilesystem": { "const": false },
+        "allowBrowser": { "const": false },
+        "allowHardware": { "const": false },
+        "requiresHumanApproval": { "const": true },
+        "maxRequestBytes": { "type": "integer", "minimum": 1024, "maximum": 1048576 },
+        "timeoutMs": { "type": "integer", "minimum": 1000, "maximum": 120000 }
+      }
+    }
+  }
+}

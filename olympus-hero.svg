@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Olympus — Zeus, Odin, and Thor above Mount Olympus</title>
+  <desc id="desc">An original dark cinematic illustration of a luminous Mount Olympus command platform with Zeus in the center, custom Odin on the left, and custom Thor on the right.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050817"/>
+      <stop offset="0.58" stop-color="#11172d"/>
+      <stop offset="1" stop-color="#251a2e"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="46%" r="55%">
+      <stop offset="0" stop-color="#fff6cf" stop-opacity=".95"/>
+      <stop offset=".18" stop-color="#8ce8ff" stop-opacity=".45"/>
+      <stop offset=".52" stop-color="#9572ff" stop-opacity=".11"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mountain" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#6b719b"/>
+      <stop offset=".5" stop-color="#252742"/>
+      <stop offset="1" stop-color="#080a16"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fff2bd"/>
+      <stop offset=".4" stop-color="#f5c96b"/>
+      <stop offset="1" stop-color="#9c5c2c"/>
+    </linearGradient>
+    <linearGradient id="zeus" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#eafaff"/>
+      <stop offset=".45" stop-color="#82d9ef"/>
+      <stop offset="1" stop-color="#4254a7"/>
+    </linearGradient>
+    <linearGradient id="odin" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#d9dde5"/>
+      <stop offset=".42" stop-color="#69748e"/>
+      <stop offset="1" stop-color="#252b48"/>
+    </linearGradient>
+    <linearGradient id="thor" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f5d09a"/>
+      <stop offset=".4" stop-color="#b96e4d"/>
+      <stop offset="1" stop-color="#492e55"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="35"/></filter>
+    <pattern id="stars" width="180" height="130" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="26" r="1.4" fill="#fff" opacity=".7"/><circle cx="88" cy="71" r="1" fill="#c9f5ff" opacity=".55"/><circle cx="154" cy="35" r="1.7" fill="#ffe7aa" opacity=".6"/><circle cx="132" cy="112" r=".8" fill="#fff" opacity=".55"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d9b86d"/></marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="620" fill="url(#stars)" opacity=".75"/>
+  <ellipse cx="800" cy="430" rx="620" ry="440" fill="url(#halo)"/>
+  <circle cx="800" cy="395" r="190" fill="#92f1ff" opacity=".08" filter="url(#soft)"/>
+  <path d="M0 620L170 500L260 566L420 375L555 560L720 330L800 485L920 350L1080 575L1240 422L1390 550L1600 448V900H0z" fill="url(#mountain)" opacity=".96"/>
+  <path d="M0 665L175 555L280 630L420 435L550 630L720 405L800 540L930 430L1088 646L1240 505L1390 620L1600 530V900H0z" fill="#0a0d1a"/>
+  <path d="M605 651L800 370L995 651Z" fill="#15172a" stroke="#8a8ab3" stroke-opacity=".42" stroke-width="3"/>
+  <path d="M670 651L800 442L930 651" fill="none" stroke="#f2d37d" stroke-opacity=".48" stroke-width="4"/>
+  <g opacity=".9" stroke="#8deaff" stroke-width="2" fill="none">
+    <path d="M170 165C420 54 612 146 800 72C1020 -8 1210 92 1440 160" opacity=".35"/>
+    <path d="M100 255C350 148 560 248 790 166C1060 70 1230 210 1510 238" opacity=".22"/>
+  </g>
+  <g transform="translate(800 256)">
+    <circle r="92" fill="#dffcff" opacity=".14" filter="url(#glow)"/>
+    <path d="M-22-155L4-104L-18-78L45-30L5-7L31 43L-22 26L-42 86L-58 35L-101 45L-73 3L-119-29L-64-38L-75-88L-31-62Z" fill="#efffff" stroke="#7adfff" stroke-width="3" filter="url(#glow)"/>
+    <circle r="17" fill="#fff8cf"/>
+  </g>
+  <!-- Olympus platform -->
+  <g transform="translate(800 650)">
+    <ellipse cx="0" cy="105" rx="500" ry="58" fill="#05060d" stroke="#f0ca73" stroke-width="3" stroke-opacity=".7"/>
+    <ellipse cx="0" cy="82" rx="420" ry="44" fill="#1b1b31" stroke="#70e7ee" stroke-width="2" stroke-opacity=".55"/>
+    <path d="M-375 83H375L330 118H-330Z" fill="#0d1020" stroke="#e7bb61" stroke-opacity=".55"/>
+    <path d="M-315 86L-257 30L-196 86M-168 86L-108 30L-47 86M47 86L108 30L168 86M196 86L257 30L315 86" fill="none" stroke="#a8c8d3" stroke-opacity=".42" stroke-width="7"/>
+    <g stroke="#f1ca72" stroke-width="2" opacity=".75"><path d="M-300 101H300"/><path d="M-250 113H250"/></g>
+  </g>
+  <!-- Zeus, center commander -->
+  <g transform="translate(800 486)">
+    <path d="M-93 160C-100 73-85 6-57-48C-43-74-24-91 0-93C24-91 43-74 57-48C85 6 100 73 93 160Z" fill="url(#zeus)" stroke="#c8f9ff" stroke-width="3"/>
+    <path d="M-64-44C-47-103-26-131 0-131C26-131 47-103 64-44C40-20 22-8 0-8C-22-8-40-20-64-44Z" fill="#d8fbff" stroke="#75d8ee" stroke-width="3"/>
+    <path d="M-40-83L-73-155L-28-126L0-172L28-126L73-155L40-83" fill="url(#gold)" stroke="#ffedaa" stroke-width="3"/>
+    <path d="M-23-59L-11-47M23-59L11-47" stroke="#1b3262" stroke-width="5" stroke-linecap="round"/><path d="M-21-19Q0-4 21-19" fill="none" stroke="#1b3262" stroke-width="4"/>
+    <path d="M-74 25L-148 9L-117 53L-159 83L-79 83" fill="#b9f5ff" stroke="#77d9ef" stroke-width="3"/>
+    <path d="M74 25L148 9L117 53L159 83L79 83" fill="#b9f5ff" stroke="#77d9ef" stroke-width="3"/>
+    <path d="M-50 112L-78 188M50 112L78 188" stroke="#99e9f8" stroke-width="20" stroke-linecap="round"/><path d="M-95 188H-38M38 188H95" stroke="#f2c96f" stroke-width="12" stroke-linecap="round"/>
+    <path d="M-150 98L-170 134L-150 170L-130 134Z" fill="#fff4bd" stroke="#8de7f3" stroke-width="2" filter="url(#glow)"/>
+    <path d="M0-150V-245M0-245L-26-212M0-245L26-212" stroke="#fff5b3" stroke-width="7" stroke-linecap="round" filter="url(#glow)"/>
+  </g>
+  <!-- Odin, left custom avatar -->
+  <g transform="translate(430 530)">
+    <path d="M-118 135C-117 35-101-45-52-99C-30-123-11-131 20-127C76-120 112-67 119 31L98 160H-100Z" fill="url(#odin)" stroke="#d2dbea" stroke-width="3"/>
+    <path d="M-60-78C-51-145-22-177 28-173C78-168 103-134 99-74L67-22H-32Z" fill="#b7c3d1" stroke="#e7edf5" stroke-width="3"/>
+    <path d="M-29-111L-56-184L-6-150L37-205L61-145L110-164L76-92" fill="#e6edf4" stroke="#9ba8bf" stroke-width="3"/>
+    <path d="M-30-97L-50-58" stroke="#2a3150" stroke-width="12"/><path d="M-52-52Q-24-39 2-53" fill="none" stroke="#27304c" stroke-width="5"/><path d="M45-57L64-57" stroke="#27304c" stroke-width="5"/>
+    <circle cx="54" cy="-53" r="9" fill="#ffdd80" stroke="#fff0b1" stroke-width="3"/>
+    <path d="M-74 23L-143 76L-107 87L-142 136L-66 114" fill="#596681" stroke="#d0dbea" stroke-width="3"/>
+    <path d="M72 20L145 68L111 85L140 137L66 111" fill="#596681" stroke="#d0dbea" stroke-width="3"/>
+    <path d="M-45 120L-65 186M46 120L66 186" stroke="#8d9cb6" stroke-width="22" stroke-linecap="round"/><path d="M-83 186H-32M32 186H83" stroke="#d7b46a" stroke-width="11" stroke-linecap="round"/>
+    <path d="M-145 10Q-192 41-160 71Q-126 41-145 10ZM124 3Q181 34 148 72Q117 42 124 3Z" fill="#101426" stroke="#8996ad" stroke-width="3"/>
+    <path d="M-176-5L-185 28M159-10L170 24" stroke="#b4c1d5" stroke-width="4"/>
+  </g>
+  <!-- Thor, right custom avatar -->
+  <g transform="translate(1170 530)">
+    <path d="M-120 157C-119 42-92-47-48-91C-23-116 13-122 48-99C95-68 116 25 119 157Z" fill="url(#thor)" stroke="#ffdba1" stroke-width="3"/>
+    <path d="M-70-68C-64-141-27-174 26-169C77-164 103-125 96-62L67-10H-40Z" fill="#f0c18e" stroke="#ffe0ad" stroke-width="3"/>
+    <path d="M-73-90L-123-146L-53-133L-17-196L21-135L92-149L50-84" fill="#b66a50" stroke="#f5c48e" stroke-width="4"/>
+    <path d="M-42-91L-60-50M45-92L62-50" stroke="#532c41" stroke-width="9"/><path d="M-49-34Q0-6 49-34" fill="none" stroke="#532c41" stroke-width="5"/>
+    <path d="M-76 20L-158-13L-142 43L-185 64L-87 93" fill="#9d5260" stroke="#f5bd8c" stroke-width="3"/>
+    <path d="M76 20L158-13L142 43L185 64L87 93" fill="#9d5260" stroke="#f5bd8c" stroke-width="3"/>
+    <path d="M-47 115L-78 187M47 115L78 187" stroke="#a96a61" stroke-width="24" stroke-linecap="round"/><path d="M-96 188H-34M34 188H96" stroke="#f2c86f" stroke-width="12" stroke-linecap="round"/>
+    <g transform="translate(155 10) rotate(18)"><rect x="-18" y="-82" width="36" height="140" rx="8" fill="#a8c3d5" stroke="#e7f8ff" stroke-width="4"/><path d="M-52-82H52V-45H-52Z" fill="#aec7d8" stroke="#e7f8ff" stroke-width="4"/><path d="M-42 57H42V82H-42Z" fill="#6e8fa8" stroke="#dff7ff" stroke-width="3"/></g>
+    <path d="M-160-17L-177 10M-178 2L-193 17" stroke="#ffe29c" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
+  </g>
+  <!-- Connection filaments -->
+  <g fill="none" stroke="#d9b86d" stroke-width="2" opacity=".45" stroke-dasharray="6 12">
+    <path d="M590 575C640 520 675 500 700 480" marker-end="url(#arrow)"/><path d="M1010 575C960 520 925 500 900 480" marker-end="url(#arrow)"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">
+    <text x="800" y="805" fill="#fff0b1" font-size="34" letter-spacing="12">OLYMPUS</text>
+    <text x="800" y="842" fill="#9adce8" font-size="14" letter-spacing="5">OUTLAW INTELLIGENCE · HERMES AVATAR COMMAND</text>
+    <text x="430" y="770" fill="#cbd5e1" font-size="17" letter-spacing="4">ODIN / COUNSEL</text>
+    <text x="800" y="770" fill="#dffcff" font-size="17" letter-spacing="4">ZEUS / COMMAND</text>
+    <text x="1170" y="770" fill="#ffd8a0" font-size="17" letter-spacing="4">THOR / BUILD</text>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+{
+  "id": "zeus",
+  "displayName": "Zeus",
+  "role": "Commander and primary operator",
+  "authority": "decision",
+  "avatar": {
+    "renderer": "airi",
+    "assetRef": "${OLYMPUS_ZEUS_AVATAR_ASSET}",
+    "stateModel": "operator"
+  },
+  "voice": {
+    "provider": "local-adapter",
+    "voiceRef": "${OLYMPUS_ZEUS_VOICE}",
+    "language": "en-US"
+  },
+  "capabilities": ["conversation", "planning", "status-read"],
+  "adapter": {
+    "transport": "loopback-http",
+    "bind": "127.0.0.1",
+    "profileRef": "${OLYMPUS_ZEUS_PROFILE}",
+    "requestAllowlist": ["health", "chat", "avatar-state", "handoff", "status-read"]
+  },
+  "security": {
+    "allowShell": false,
+    "allowFilesystem": false,
+    "allowBrowser": false,
+    "allowHardware": false,
+    "requiresHumanApproval": true,
+    "maxRequestBytes": 262144,
+    "timeoutMs": 30000
+  }
+}

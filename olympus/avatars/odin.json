@@ -1,0 +1,32 @@
+{
+  "id": "odin",
+  "displayName": "Odin",
+  "role": "Independent counsel and red-team reviewer",
+  "authority": "counsel",
+  "avatar": {
+    "renderer": "airi",
+    "assetRef": "${OLYMPUS_ODIN_AVATAR_ASSET}",
+    "stateModel": "counsel"
+  },
+  "voice": {
+    "provider": "local-adapter",
+    "voiceRef": "${OLYMPUS_ODIN_VOICE}",
+    "language": "en-US"
+  },
+  "capabilities": ["conversation", "analysis", "red-team", "architecture-review", "status-read"],
+  "adapter": {
+    "transport": "loopback-http",
+    "bind": "127.0.0.1",
+    "profileRef": "${OLYMPUS_ODIN_PROFILE}",
+    "requestAllowlist": ["health", "chat", "avatar-state", "handoff", "status-read"]
+  },
+  "security": {
+    "allowShell": false,
+    "allowFilesystem": false,
+    "allowBrowser": false,
+    "allowHardware": false,
+    "requiresHumanApproval": true,
+    "maxRequestBytes": 262144,
+    "timeoutMs": 45000
+  }
+}

@@ -1,0 +1,13 @@
+flowchart LR
+  Input[Apple Silicon text or microphone] --> ASR[Local ASR adapter]
+  ASR --> Adapter[Olympus loopback adapter]
+  Input --> Adapter
+  Adapter --> Zeus[Zeus / decision lane]
+  Adapter --> Odin[Odin / counsel lane]
+  Adapter --> Thor[Thor / implementation lane]
+  Zeus --> TTS[Local TTS adapter]
+  Odin --> TTS
+  Thor --> TTS
+  TTS --> AIRI[AIRI renderer and avatar state]
+  Adapter -. allowlist only .-> Policy[Security and approval policy]
+  Policy -. no direct shell/filesystem/browser/hardware .-> Adapter

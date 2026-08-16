@@ -1,0 +1,11 @@
+# Local Olympus-only configuration and assets
+.env
+.env.*
+!.env.example
+olympus/private/
+olympus/assets/
+*.pem
+*.key
+*.p12
+*.kdbx
+.DS_Store
