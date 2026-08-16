@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A sanitized engineering case study showing how Dylan Walls customized and hardened AIRI into a responsive local-first voice companion.">
+  <meta name="description" content="Outlaw Intelligence Command Center — a sanitized, evidence-bound engineering build record for a Hermes Desktop plugin system.">
   <meta name="theme-color" content="#07090d">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2307090d'/%3E%3Ccircle cx='32' cy='32' r='23' fill='%230f2430' stroke='%236de5ff'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial,sans-serif' font-size='27' font-weight='700' fill='%23f4f7fb'%3EA%3C/text%3E%3C/svg%3E">
-  <title>AIRI Local-First Voice Companion — Dylan Walls</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2307090d'/%3E%3Ccircle cx='32' cy='32' r='23' fill='%230f2430' stroke='%236de5ff'/%3E%3Cpath d='M19 35c7-16 19-16 26 0-7-5-19-5-26 0Z' fill='%236de5ff'/%3E%3C/svg%3E">
+  <title>Outlaw Command Center — Public Build Record</title>
   <style>
     :root {
       color-scheme: dark;
       --bg: #07090d;
-      --panel: rgba(15, 20, 29, .78);
+      --panel: rgba(15, 20, 29, .82);
       --panel-strong: #101722;
       --line: rgba(194, 221, 255, .14);
-      --line-bright: rgba(109, 229, 255, .36);
+      --line-bright: rgba(109, 229, 255, .38);
       --text: #f4f7fb;
       --muted: #a7b2c2;
-      --faint: #707d90;
+      --faint: #738096;
       --cyan: #6de5ff;
       --mint: #7bf1c8;
       --gold: #efca7b;
       --violet: #b9a3ff;
       --danger: #ff9f9f;
       --max: 1180px;
-      --radius: 22px;
+      --radius: 20px;
     }
 
     * { box-sizing: border-box; }
@@ -34,9 +34,9 @@
       min-width: 320px;
       color: var(--text);
       background:
-        radial-gradient(circle at 68% 12%, rgba(109, 229, 255, .10), transparent 27rem),
-        radial-gradient(circle at 14% 32%, rgba(185, 163, 255, .09), transparent 24rem),
-        linear-gradient(var(--bg), #090d14 55%, #07090d);
+        radial-gradient(circle at 74% 7%, rgba(109, 229, 255, .11), transparent 28rem),
+        radial-gradient(circle at 8% 31%, rgba(185, 163, 255, .09), transparent 25rem),
+        linear-gradient(var(--bg), #090d14 56%, #07090d);
       font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
       overflow-x: clip;
@@ -47,21 +47,21 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: .32;
+      opacity: .3;
       background-image:
         linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
       background-size: 42px 42px;
-      mask-image: linear-gradient(to bottom, black, transparent 82%);
+      mask-image: linear-gradient(to bottom, black, transparent 84%);
     }
 
     a { color: inherit; }
     a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
     .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .04em; }
-    .eyebrow { color: var(--cyan); text-transform: uppercase; font-size: .74rem; font-weight: 800; letter-spacing: .18em; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .045em; }
+    .eyebrow { color: var(--cyan); text-transform: uppercase; font-size: .73rem; font-weight: 850; letter-spacing: .18em; }
     .muted { color: var(--muted); }
-    .accent { color: var(--cyan); }
+    .faint { color: var(--faint); }
 
     .skip-link {
       position: fixed; left: 16px; top: -80px; z-index: 100;
@@ -72,151 +72,124 @@
     nav {
       position: sticky; top: 0; z-index: 20;
       border-bottom: 1px solid var(--line);
-      background: rgba(7, 9, 13, .76);
+      background: rgba(7, 9, 13, .78);
       backdrop-filter: blur(18px);
     }
     .nav-inner { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { min-height: 44px; display: flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 800; }
+    .brand { min-height: 44px; display: flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 850; }
     .brand-mark {
       width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%;
       border: 1px solid var(--line-bright); color: var(--cyan); background: rgba(109,229,255,.06);
       box-shadow: inset 0 0 18px rgba(109,229,255,.11), 0 0 20px rgba(109,229,255,.05);
     }
-    .nav-links { display: flex; align-items: center; gap: 22px; }
-    .nav-links a { min-height: 44px; display: inline-flex; align-items: center; color: var(--muted); text-decoration: none; font-size: .88rem; font-weight: 700; }
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+    .nav-links a { min-height: 44px; display: inline-flex; align-items: center; color: var(--muted); text-decoration: none; font-size: .84rem; font-weight: 750; }
     .nav-links a:hover { color: var(--text); }
     .nav-cta { padding: 8px 13px; border: 1px solid var(--line-bright); border-radius: 999px; }
 
-    header { padding: 104px 0 72px; position: relative; }
-    .hero { display: grid; grid-template-columns: minmax(0, 1.14fr) minmax(300px, .86fr); gap: 72px; align-items: center; }
-    h1, h2, h3 { margin: 0; line-height: 1.08; letter-spacing: -.035em; }
-    h1 { font-size: clamp(3.4rem, 7.6vw, 7.4rem); max-width: 900px; }
-    h2 { font-size: clamp(2rem, 4.2vw, 4rem); }
-    h3 { font-size: 1.16rem; letter-spacing: -.018em; }
-    .hero-copy > p { max-width: 720px; margin: 26px 0 0; color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.24rem); }
+    header { padding: 100px 0 68px; position: relative; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); gap: 64px; align-items: center; }
+    h1, h2, h3 { margin: 0; line-height: 1.08; letter-spacing: -.038em; }
+    h1 { font-size: clamp(3.25rem, 7.4vw, 7.25rem); max-width: 900px; }
+    h2 { font-size: clamp(2rem, 4.4vw, 4rem); }
+    h3 { font-size: 1.15rem; letter-spacing: -.018em; }
+    .hero-copy > p { max-width: 720px; margin: 26px 0 0; color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.23rem); }
     .hero-copy strong { color: var(--text); }
-    .credits { margin-top: 22px; color: var(--faint); font-size: .89rem; }
-    .credits a { color: var(--gold); text-underline-offset: 4px; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; min-height: 30px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .72rem; }
+    .pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 9px var(--mint); }
+    .pill.blocked::before { background: var(--gold); box-shadow: 0 0 9px var(--gold); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
     .button {
       min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 11px 17px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: .9rem;
+      padding: 11px 17px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: .88rem;
       border: 1px solid var(--line); background: rgba(255,255,255,.025);
     }
     .button.primary { color: #061014; border-color: transparent; background: linear-gradient(135deg, var(--cyan), var(--mint)); }
     .button:hover { transform: translateY(-1px); border-color: var(--line-bright); }
 
-    .orb-shell { position: relative; min-height: 460px; display: grid; place-items: center; }
-    .orb-shell::before, .orb-shell::after {
-      content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(109,229,255,.14);
+    .terminal {
+      position: relative; overflow: hidden; border: 1px solid var(--line-bright); border-radius: 18px;
+      background: linear-gradient(145deg, rgba(16, 27, 38, .95), rgba(9, 13, 20, .9));
+      box-shadow: 0 24px 90px rgba(0,0,0,.24), inset 0 0 38px rgba(109,229,255,.035);
     }
-    .orb-shell::before { width: 390px; height: 390px; animation: spin 24s linear infinite; border-style: dashed; }
-    .orb-shell::after { width: 310px; height: 310px; border-color: rgba(185,163,255,.17); }
-    .orb {
-      position: relative; width: 230px; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center;
-      background:
-        radial-gradient(circle at 43% 35%, #d9fbff 0 2%, rgba(109,229,255,.88) 3%, rgba(109,229,255,.17) 22%, transparent 48%),
-        radial-gradient(circle at 58% 66%, rgba(185,163,255,.75), transparent 38%),
-        #08131c;
-      border: 1px solid rgba(173,245,255,.44);
-      box-shadow: 0 0 80px rgba(109,229,255,.18), inset 0 0 54px rgba(109,229,255,.18);
-    }
-    .orb::before, .orb::after { content: ""; position: absolute; border-radius: 50%; }
-    .orb::before { inset: 14%; border: 1px solid rgba(255,255,255,.19); }
-    .orb::after { inset: -19%; border-top: 1px solid var(--gold); border-left: 1px solid transparent; animation: spin 11s linear infinite reverse; }
-    .orb-label { position: relative; z-index: 2; text-align: center; }
-    .orb-label strong { display: block; font-size: 2.2rem; letter-spacing: .14em; }
-    .orb-label span { color: var(--cyan); font-size: .72rem; text-transform: uppercase; }
-    .signal { position: absolute; display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: .72rem; }
-    .signal::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 10px var(--mint); }
-    .signal.one { top: 52px; left: 14px; }
-    .signal.two { right: 0; top: 146px; }
-    .signal.three { bottom: 50px; left: 46px; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .orb-shell::before, .orb::after { animation: none; } .button:hover { transform: none; } }
+    .terminal-bar { display: flex; align-items: center; gap: 7px; padding: 14px 17px; border-bottom: 1px solid var(--line); color: var(--faint); font-size: .7rem; }
+    .terminal-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--danger); }
+    .terminal-dot:nth-child(2) { background: var(--gold); }
+    .terminal-dot:nth-child(3) { background: var(--mint); }
+    .terminal-title { margin-left: 5px; }
+    .terminal pre { margin: 0; padding: 25px 22px 28px; white-space: pre-wrap; color: #ccecf4; font-size: .78rem; line-height: 1.85; }
+    .terminal .ok { color: var(--mint); }
+    .terminal .warn { color: var(--gold); }
+    .terminal .dim { color: var(--faint); }
 
-    section { padding: 88px 0; position: relative; }
+    section { padding: 82px 0; position: relative; }
     section + section { border-top: 1px solid var(--line); }
-    .section-head { display: grid; grid-template-columns: 1fr minmax(280px, .7fr); gap: 44px; align-items: end; margin-bottom: 44px; }
+    .section-head { display: grid; grid-template-columns: 1fr minmax(280px, .72fr); gap: 44px; align-items: end; margin-bottom: 38px; }
     .section-head p { margin: 0; color: var(--muted); }
     .section-head .eyebrow { margin-bottom: 13px; }
 
-    .attribution {
-      display: grid; grid-template-columns: .7fr 1.3fr; overflow: hidden;
-      border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel);
-    }
-    .attribution-label { padding: 38px; background: linear-gradient(145deg, rgba(109,229,255,.1), rgba(185,163,255,.06)); border-right: 1px solid var(--line); }
-    .attribution-label .big { display: block; margin-top: 12px; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 900; line-height: .95; }
-    .attribution-copy { padding: 38px; display: grid; gap: 18px; }
-    .attribution-copy p { margin: 0; color: var(--muted); }
-    .truth { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .truth div { padding: 15px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.018); }
-    .truth strong { display: block; margin-bottom: 4px; font-size: .88rem; }
-    .truth span { color: var(--muted); font-size: .84rem; }
+    .status-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+    .status-card { min-width: 0; padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
+    .status-card strong { display: block; font-size: 1.65rem; letter-spacing: -.045em; }
+    .status-card span { display: block; margin-top: 5px; color: var(--muted); font-size: .78rem; }
+    .status-card.live strong { color: var(--mint); }
+    .status-card.held strong { color: var(--gold); }
+    .status-card.private strong { color: var(--violet); }
 
-    .work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-    .work-card {
-      min-width: 0; min-height: 238px; padding: 25px; border: 1px solid var(--line); border-radius: 18px;
-      background: linear-gradient(145deg, rgba(16,23,34,.94), rgba(10,14,21,.76));
-    }
-    .work-card .number { color: var(--faint); font-size: .72rem; }
-    .work-card h3 { margin-top: 32px; }
-    .work-card p { margin: 13px 0 0; color: var(--muted); font-size: .91rem; }
-    .work-card:nth-child(2) { border-color: rgba(123,241,200,.22); }
-    .work-card:nth-child(5) { border-color: rgba(185,163,255,.22); }
+    .filter-row { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 18px; }
+    .filter-row button { cursor: pointer; min-height: 38px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.02); font: inherit; font-size: .76rem; font-weight: 750; }
+    .filter-row button[aria-pressed="true"], .filter-row button:hover { border-color: var(--line-bright); color: var(--text); }
+    .delivery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .delivery-card { min-width: 0; min-height: 250px; padding: 25px; border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(145deg, rgba(16,23,34,.94), rgba(10,14,21,.76)); }
+    .delivery-card[hidden] { display: none; }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .card-number { color: var(--faint); font-size: .72rem; }
+    .state { padding: 4px 8px; border-radius: 999px; color: var(--mint); background: rgba(123,241,200,.08); font-size: .66rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .state.held { color: var(--gold); background: rgba(239,202,123,.08); }
+    .delivery-card h3 { margin-top: 30px; }
+    .delivery-card p { margin: 13px 0 0; color: var(--muted); font-size: .9rem; }
+    .delivery-card ul { margin: 15px 0 0; padding-left: 19px; color: var(--muted); font-size: .82rem; }
+    .delivery-card li + li { margin-top: 5px; }
 
-    .pipeline { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; align-items: stretch; }
-    .stage { position: relative; min-width: 0; padding: 22px 17px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
-    .stage:not(:last-child)::after { content: "→"; position: absolute; right: -18px; top: 50%; z-index: 2; color: var(--cyan); font-weight: 900; transform: translateY(-50%); }
-    .stage-icon { color: var(--cyan); font-size: 1.35rem; }
-    .stage h3 { margin-top: 34px; font-size: 1rem; }
-    .stage p { margin: 8px 0 0; color: var(--muted); font-size: .8rem; }
-    .boundary { margin-top: 24px; padding: 14px 16px; border-left: 2px solid var(--gold); background: rgba(239,202,123,.055); color: var(--muted); font-size: .88rem; }
+    .flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 11px; align-items: stretch; }
+    .flow-step { position: relative; min-width: 0; padding: 22px 17px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
+    .flow-step:not(:last-child)::after { content: "→"; position: absolute; right: -18px; top: 50%; z-index: 2; color: var(--cyan); font-weight: 900; transform: translateY(-50%); }
+    .flow-icon { color: var(--cyan); font-size: 1.3rem; }
+    .flow-step h3 { margin-top: 29px; font-size: 1rem; }
+    .flow-step p { margin: 8px 0 0; color: var(--muted); font-size: .79rem; }
+    .boundary { margin-top: 22px; padding: 14px 16px; border-left: 2px solid var(--gold); background: rgba(239,202,123,.055); color: var(--muted); font-size: .86rem; }
 
-    .metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-    .metric { padding: 29px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
-    .metric-value { display: block; color: var(--cyan); font-size: clamp(2.4rem, 5vw, 4.8rem); font-weight: 900; line-height: 1; letter-spacing: -.07em; }
-    .metric-label { display: block; margin-top: 15px; font-weight: 800; }
-    .metric-detail { display: block; margin-top: 5px; color: var(--muted); font-size: .82rem; }
-    .evidence-note { margin: 18px 0 0; color: var(--faint); font-size: .8rem; }
-
-    .boundary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .boundary-card { padding: 29px; border-radius: 20px; border: 1px solid var(--line); background: var(--panel); }
-    .boundary-card.safe { border-color: rgba(123,241,200,.25); }
-    .boundary-card.private { border-color: rgba(255,159,159,.20); }
-    .boundary-card ul { margin: 22px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
-    .boundary-card li { position: relative; padding-left: 23px; color: var(--muted); }
-    .boundary-card.safe li::before { content: "✓"; color: var(--mint); }
-    .boundary-card.private li::before { content: "—"; color: var(--danger); }
-    .boundary-card li::before { position: absolute; left: 0; font-weight: 900; }
+    .evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .evidence-card { padding: 27px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
+    .evidence-card h3 { margin-bottom: 18px; }
+    .evidence-list { display: grid; gap: 11px; margin: 0; padding: 0; list-style: none; }
+    .evidence-list li { position: relative; padding-left: 25px; color: var(--muted); font-size: .88rem; }
+    .evidence-list li::before { content: "✓"; position: absolute; left: 0; color: var(--mint); font-weight: 900; }
+    .evidence-list li.hold::before { content: "!"; color: var(--gold); }
+    .evidence-list strong { color: var(--text); }
 
     .lessons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .lesson { padding: 26px; border-top: 1px solid var(--line-bright); background: rgba(255,255,255,.018); }
-    .lesson strong { display: block; font-size: 1.07rem; }
+    .lesson { padding: 25px; border-top: 1px solid var(--line-bright); background: rgba(255,255,255,.018); }
+    .lesson strong { display: block; font-size: 1.05rem; }
     .lesson p { margin: 9px 0 0; color: var(--muted); }
 
-    .final {
-      padding: 54px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
-      border: 1px solid var(--line-bright); border-radius: 26px;
-      background: linear-gradient(135deg, rgba(109,229,255,.10), rgba(185,163,255,.08), rgba(15,20,29,.86));
-    }
+    .final { padding: 48px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; border: 1px solid var(--line-bright); border-radius: 24px; background: linear-gradient(135deg, rgba(109,229,255,.10), rgba(185,163,255,.08), rgba(15,20,29,.86)); }
     .final h2 { max-width: 760px; }
     .final p { margin: 17px 0 0; max-width: 720px; color: var(--muted); }
-    .final-actions { display: grid; gap: 10px; min-width: 210px; }
+    .final-actions { display: grid; gap: 10px; min-width: 215px; }
 
     footer { padding: 34px 0 48px; color: var(--faint); font-size: .8rem; }
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); padding-top: 24px; }
 
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; gap: 32px; }
+      .hero { grid-template-columns: 1fr; gap: 38px; }
       header { padding-top: 72px; }
-      .orb-shell { min-height: 390px; }
-      .section-head, .attribution { grid-template-columns: 1fr; }
-      .attribution-label { border-right: 0; border-bottom: 1px solid var(--line); }
-      .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .pipeline { grid-template-columns: 1fr; }
-      .stage:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -22px; transform: translateX(50%); }
-      .stage h3 { margin-top: 16px; }
+      .section-head, .evidence-grid { grid-template-columns: 1fr; }
+      .delivery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .flow { grid-template-columns: 1fr; }
+      .flow-step:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -22px; transform: translateX(50%); }
+      .flow-step h3 { margin-top: 15px; }
       .final { grid-template-columns: 1fr; }
       .final-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
@@ -225,31 +198,32 @@
       .wrap { width: min(calc(100% - 28px), var(--max)); }
       .nav-inner { min-height: 62px; }
       .nav-links a:not(.nav-cta) { display: none; }
-      header { padding: 62px 0 48px; }
+      header { padding: 60px 0 46px; }
       h1 { font-size: clamp(3rem, 16vw, 4.8rem); }
-      .orb-shell { min-height: 320px; transform: scale(.82); margin: -28px 0; }
-      section { padding: 64px 0; }
-      .section-head { gap: 18px; margin-bottom: 30px; }
-      .truth, .work-grid, .metrics, .boundary-grid, .lessons { grid-template-columns: 1fr; }
-      .work-card { min-height: 0; }
-      .work-card h3 { margin-top: 20px; }
-      .attribution-label, .attribution-copy, .metric, .boundary-card { padding: 24px; }
+      section { padding: 62px 0; }
+      .status-strip, .delivery-grid, .lessons { grid-template-columns: 1fr; }
+      .terminal pre { font-size: .7rem; }
       .final { padding: 27px; }
       .final-actions { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button:hover { transform: none; }
+    }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to case study</a>
+  <a class="skip-link" href="#main">Skip to build record</a>
   <nav aria-label="Primary navigation">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top"><span class="brand-mark mono" aria-hidden="true">A</span><span>AIRI Case Study</span></a>
+      <a class="brand" href="#top"><span class="brand-mark mono" aria-hidden="true">OI</span><span>Outlaw Command Center</span></a>
       <div class="nav-links">
-        <a href="#engineering">Engineering</a>
+        <a href="#delivered">Delivered</a>
         <a href="#architecture">Architecture</a>
         <a href="#evidence">Evidence</a>
-        <a class="nav-cta" href="Dylan_Walls_Public_Resume-v2.pdf">Résumé ↗</a>
+        <a class="nav-cta" href="https://github.com/Outlaw-Intelligence/outlaw-audit">Repository ↗</a>
       </div>
     </div>
   </nav>
@@ -257,139 +231,193 @@
   <header id="top">
     <div class="wrap hero">
       <div class="hero-copy">
-        <div class="eyebrow mono">Public engineering case study · Local AI</div>
-        <h1>AIRI, made <span class="accent">local.</span></h1>
-        <p><strong>Dylan Walls</strong> integrated, customized, and hardened an open-source companion into a responsive local voice-and-avatar system—then verified the experience through real speech, streaming, playback, and visible avatar behavior.</p>
-        <div class="credits">Built on <a href="https://github.com/moeru-ai/airi">AIRI by moeru-ai</a>. Dylan did not create the upstream AIRI project.</div>
+        <div class="eyebrow mono">Public build record · Outlaw Intelligence</div>
+        <h1>Build the system. Tell the truth about the boundary.</h1>
+        <p>This is the sanitized public view of a Hermes Desktop command-center build: a supported plugin surface for operational read models, built in small verified steps and held to a real runtime acceptance gate.</p>
+        <div class="hero-meta" aria-label="Build status">
+          <span class="pill">Public artifact live</span>
+          <span class="pill">Task 2.4 accepted</span>
+          <span class="pill blocked">Task 3.1 held at AX/CUA gate</span>
+        </div>
         <div class="actions">
-          <a class="button primary" href="#engineering">Explore the engineering <span aria-hidden="true">↓</span></a>
-          <a class="button" href="https://github.com/moeru-ai/airi">View upstream AIRI <span aria-hidden="true">↗</span></a>
+          <a class="button primary" href="#delivered">View delivered work ↓</a>
+          <a class="button" href="outlaw-command-center-case-study.md">Technical narrative ↗</a>
         </div>
       </div>
-      <div class="orb-shell" aria-label="Abstract visualization of the local voice companion pipeline">
-        <div class="signal one mono">VOICE IN</div>
-        <div class="signal two mono">LOCAL INFERENCE</div>
-        <div class="signal three mono">AVATAR STATE</div>
-        <div class="orb"><div class="orb-label"><strong>AIRI</strong><span class="mono">local companion</span></div></div>
+
+      <div class="terminal" aria-label="Sanitized build status terminal">
+        <div class="terminal-bar"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title mono">outlaw-command-center / public-status</span></div>
+        <pre class="mono"><span class="dim">$ audit status --public</span>
+
+<span class="ok">PUBLIC_VIEW       OPERATIONAL</span>
+<span class="ok">FOUNDATION        ACCEPTED</span>
+<span class="ok">READ_MODELS       ACCEPTED</span>
+<span class="ok">LIVE_ARTIFACT     PRESERVED</span>
+<span class="warn">DESKTOP_AX        BLOCKED</span>
+
+<span class="dim">promotion         held</span>
+<span class="dim">private_runtime   redacted</span>
+<span class="dim">credentials       excluded</span></pre>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <section id="attribution">
+    <section aria-labelledby="snapshot-title">
       <div class="wrap">
         <div class="section-head">
-          <div><div class="eyebrow mono">01 / attribution</div><h2>Foundation versus contribution.</h2></div>
-          <p>The strongest portfolio work is precise about authorship. AIRI supplied the open-source companion foundation; Dylan engineered the surrounding local experience and reliability boundaries.</p>
+          <div><div class="eyebrow mono">01 / Snapshot</div><h2 id="snapshot-title">A usable public endpoint, not a progress wall.</h2></div>
+          <p>The page itself is the stable endpoint for the work: it shows what shipped, what is live, what is intentionally held, and why.</p>
         </div>
-        <div class="attribution">
-          <div class="attribution-label"><span class="eyebrow mono">Upstream project</span><span class="big">AIRI</span></div>
-          <div class="attribution-copy">
-            <p><a href="https://github.com/moeru-ai/airi"><strong>AIRI</strong></a> is an open-source AI companion project created by <strong>moeru-ai</strong>. Its public project provides the companion interface and avatar ecosystem.</p>
-            <div class="truth">
-              <div><strong>Upstream ownership</strong><span>AIRI code, characters, assets, and original product direction belong to their respective upstream authors.</span></div>
-              <div><strong>Dylan's contribution</strong><span>Integration, local runtime design, build recovery, provider hardening, voice pipeline work, and behavioral verification.</span></div>
-            </div>
-            <p>This portfolio contains a sanitized explanation—not redistributed AIRI source, models, characters, artwork, or private deployment configuration.</p>
-          </div>
+        <div class="status-strip" aria-label="Build snapshot">
+          <div class="status-card live"><strong>4</strong><span>Phase 1 surfaces accepted</span></div>
+          <div class="status-card live"><strong>4</strong><span>Read-only model surfaces accepted</span></div>
+          <div class="status-card held"><strong>1</strong><span>Runtime gate held for AX/CUA</span></div>
+          <div class="status-card private"><strong>0</strong><span>Private runtime artifacts published</span></div>
         </div>
       </div>
     </section>
 
-    <section id="engineering">
+    <section id="delivered" aria-labelledby="delivered-title">
       <div class="wrap">
         <div class="section-head">
-          <div><div class="eyebrow mono">02 / implementation</div><h2>What Dylan engineered.</h2></div>
-          <p>The objective was not to make a mascot talk once. It was to create a bounded, responsive system whose stages could be observed, tested, and recovered independently.</p>
+          <div><div class="eyebrow mono">02 / Delivered</div><h2 id="delivered-title">The work is organized around accepted surfaces.</h2></div>
+          <p>Use the filter to separate what is accepted from what is intentionally held. This is a static, dependency-free view; it does not pretend to be a private telemetry feed.</p>
         </div>
-        <div class="work-grid">
-          <article class="work-card"><span class="number mono">01</span><h3>Desktop build recovery</h3><p>Recovered the application workspace, verified relevant packages, rebuilt the desktop experience, and accepted the installed behavior—not just compiler output.</p></article>
-          <article class="work-card"><span class="number mono">02</span><h3>Onboarding hardening</h3><p>Corrected provider-detection and persisted-state behavior so a valid local setup did not fall back into an unnecessary setup loop.</p></article>
-          <article class="work-card"><span class="number mono">03</span><h3>Streamed local conversation</h3><p>Connected a local model lane with streamed output and bounded spoken replies, reducing the wait before useful content appeared.</p></article>
-          <article class="work-card"><span class="number mono">04</span><h3>Persistent speech recognition</h3><p>Kept local recognition available as a service stage instead of paying model startup cost on every voice turn.</p></article>
-          <article class="work-card"><span class="number mono">05</span><h3>Local speech + lip-sync</h3><p>Connected local synthesis to playback and avatar speech behavior, then verified visible mouth, face, and body-state changes during audio.</p></article>
-          <article class="work-card"><span class="number mono">06</span><h3>Operational boundaries</h3><p>Separated health, readiness, timeouts, recovery, and graceful degradation so one unavailable component did not silently redefine the whole system.</p></article>
+        <div class="filter-row" aria-label="Filter delivered work">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="accepted" aria-pressed="false">Accepted</button>
+          <button type="button" data-filter="held" aria-pressed="false">Held</button>
+        </div>
+        <div class="delivery-grid">
+          <article class="delivery-card" data-state="accepted">
+            <div class="card-top"><span class="card-number mono">01 / FOUNDATION</span><span class="state">Accepted</span></div>
+            <h3>Shell, route, navigation, pane</h3>
+            <p>The supported Desktop plugin surface exists as a small, native-feeling command-center shell.</p>
+            <ul><li>Registered route and navigation entry</li><li>Pane lifecycle and layout placement</li><li>Static acceptance completed</li></ul>
+          </article>
+          <article class="delivery-card" data-state="accepted">
+            <div class="card-top"><span class="card-number mono">02 / READ MODELS</span><span class="state">Accepted</span></div>
+            <h3>Operational read-only views</h3>
+            <p>The dashboard reads sanitized state through the supported host surface instead of inventing a second control plane.</p>
+            <ul><li>Profile summary</li><li>Active profile and recent-session presence</li><li>Cron routine summary</li><li>Canonical per-profile skill counts</li></ul>
+          </article>
+          <article class="delivery-card" data-state="accepted">
+            <div class="card-top"><span class="card-number mono">03 / SAFETY</span><span class="state">Accepted</span></div>
+            <h3>Boundaries before promotion</h3>
+            <p>Private runtime details stay private. The accepted live artifact is preserved while the Desktop host is investigated independently.</p>
+            <ul><li>No credentials or private paths</li><li>No unapproved external actions</li><li>Rollback point preserved</li></ul>
+          </article>
+          <article class="delivery-card" data-state="held">
+            <div class="card-top"><span class="card-number mono">04 / RUNTIME</span><span class="state held">Held</span></div>
+            <h3>Task 3.1 readiness strip</h3>
+            <p>The implementation exists in the repository, but live promotion is held because the Desktop host exposes no usable AXWindow/CUA surface.</p>
+            <ul><li>Backend readiness: passed</li><li>WindowServer surface: passed</li><li>AX/CUA acceptance: blocked</li></ul>
+          </article>
+          <article class="delivery-card" data-state="held">
+            <div class="card-top"><span class="card-number mono">05 / PROMOTION</span><span class="state held">Held</span></div>
+            <h3>Live plugin promotion</h3>
+            <p>Promotion is not being claimed. The known-good prior artifact remains the live rollback point until the host runtime can be independently accepted.</p>
+            <ul><li>Review paused</li><li>Promotion paused</li><li>No hardware product mutation from this public build</li></ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="architecture">
+    <section id="architecture" aria-labelledby="architecture-title">
       <div class="wrap">
         <div class="section-head">
-          <div><div class="eyebrow mono">03 / architecture</div><h2>One experience. Five observable stages.</h2></div>
-          <p>The public diagram intentionally shows responsibility boundaries without exposing private ports, machine paths, service labels, prompts, or provider configuration.</p>
+          <div><div class="eyebrow mono">03 / Architecture</div><h2 id="architecture-title">One host. One authority. Read-only by default.</h2></div>
+          <p>The public diagram describes the contract without exposing ports, credentials, prompts, machine paths, or private fleet wiring.</p>
         </div>
-        <div class="pipeline" aria-label="Voice companion processing pipeline">
-          <article class="stage"><span class="stage-icon" aria-hidden="true">◉</span><h3>Voice input</h3><p>Capture and explicit listening state</p></article>
-          <article class="stage"><span class="stage-icon" aria-hidden="true">≋</span><h3>Local recognition</h3><p>Persistent transcription stage</p></article>
-          <article class="stage"><span class="stage-icon" aria-hidden="true">✦</span><h3>Local conversation</h3><p>Streamed model response</p></article>
-          <article class="stage"><span class="stage-icon" aria-hidden="true">⌁</span><h3>Local speech</h3><p>Bounded synthesis request</p></article>
-          <article class="stage"><span class="stage-icon" aria-hidden="true">◌</span><h3>Avatar output</h3><p>Playback, lip-sync, visible state</p></article>
+        <div class="flow" aria-label="Sanitized command center architecture">
+          <div class="flow-step"><div class="flow-icon">◈</div><h3>Supported plugin SDK</h3><p>Route, pane, status, and host-state bindings.</p></div>
+          <div class="flow-step"><div class="flow-icon">◎</div><h3>Hermes host</h3><p>The existing Desktop host remains the authority.</p></div>
+          <div class="flow-step"><div class="flow-icon">◇</div><h3>Gateway read models</h3><p>Sanitized profiles, sessions, cron, and skills.</p></div>
+          <div class="flow-step"><div class="flow-icon">▣</div><h3>Public record</h3><p>This page documents evidence, not private telemetry.</p></div>
         </div>
-        <div class="boundary"><strong>Boundary rule:</strong> every transition has its own readiness and failure contract. A voice failure must remain a voice failure—not trigger an undisclosed provider or authority change.</div>
+        <div class="boundary"><strong>Boundary:</strong> no second approval authority, no hidden cloud fallback, and no public publication of runtime secrets. The Desktop renderer/AX issue is shown as blocked rather than disguised as success.</div>
       </div>
     </section>
 
-    <section id="evidence">
+    <section id="evidence" aria-labelledby="evidence-title">
       <div class="wrap">
         <div class="section-head">
-          <div><div class="eyebrow mono">04 / measured locally</div><h2>Latency you can feel.</h2></div>
-          <p>These figures are bounded observations from local development smoke tests. They are evidence of one tested configuration—not universal performance claims or product guarantees.</p>
+          <div><div class="eyebrow mono">04 / Evidence</div><h2 id="evidence-title">Acceptance is behavior, not a green checkbox.</h2></div>
+          <p>The public record keeps the successful gates and the failed gate side by side so the endpoint remains useful after the build session ends.</p>
         </div>
-        <div class="metrics">
-          <article class="metric"><span class="metric-value">~0.25s</span><span class="metric-label">Short transcription</span><span class="metric-detail">Persistent local speech-recognition test</span></article>
-          <article class="metric"><span class="metric-value">~0.27s</span><span class="metric-label">First visible chat content</span><span class="metric-detail">Streamed local conversation test</span></article>
-          <article class="metric"><span class="metric-value">~0.40s</span><span class="metric-label">Short synthesized audio</span><span class="metric-detail">Local speech-generation test</span></article>
+        <div class="evidence-grid">
+          <article class="evidence-card">
+            <h3>Passed gates</h3>
+            <ul class="evidence-list">
+              <li><strong>Foundation:</strong> shell, route, navigation, and pane accepted.</li>
+              <li><strong>Read models:</strong> four sanitized operational summaries accepted.</li>
+              <li><strong>Rollback:</strong> known-good live artifact preserved.</li>
+              <li><strong>Public safety:</strong> secrets, private paths, ports, logs, and runtime state excluded.</li>
+            </ul>
+          </article>
+          <article class="evidence-card">
+            <h3>Open gate</h3>
+            <ul class="evidence-list">
+              <li class="hold"><strong>AX/CUA:</strong> native WindowServer bounds exist, but no usable AXWindow or renderer subtree is exposed.</li>
+              <li class="hold"><strong>Promotion:</strong> Task 3.1 is not live and the plugin is not promoted.</li>
+              <li class="hold"><strong>Next boundary:</strong> resolve the Electron/macOS runtime issue with an isolated, supported diagnosis.</li>
+            </ul>
+          </article>
         </div>
-        <p class="evidence-note mono">MEASUREMENT NOTE — Results vary by hardware, model, input length, cache state, and runtime load.</p>
       </div>
     </section>
 
-    <section id="privacy">
+    <section aria-labelledby="lessons-title">
       <div class="wrap">
         <div class="section-head">
-          <div><div class="eyebrow mono">05 / safety boundary</div><h2>Show the engineering. Protect the system.</h2></div>
-          <p>The public artifact is intentionally useful without becoming a map of the private deployment or a copy of someone else's project.</p>
-        </div>
-        <div class="boundary-grid">
-          <article class="boundary-card safe"><h3>What this case study establishes</h3><ul><li>The tested core conversation loop ran locally.</li><li>Recognition, conversation, synthesis, and playback were separate stages.</li><li>Real audio and visible avatar behavior were exercised.</li><li>Readiness and degraded states were treated as engineering concerns.</li><li>Upstream ownership and Dylan's contribution are separated clearly.</li></ul></article>
-          <article class="boundary-card private"><h3>What stays private</h3><ul><li>Credentials, provider secrets, and authentication material</li><li>Prompts, memories, transcripts, logs, and personal data</li><li>Machine paths, ports, service definitions, and backups</li><li>Internal routing, operational control surfaces, and runtime state</li><li>Upstream AIRI source, models, characters, artwork, and assets</li></ul></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="lessons">
-      <div class="wrap">
-        <div class="section-head">
-          <div><div class="eyebrow mono">06 / lessons</div><h2>What the build proved.</h2></div>
-          <p>The value is not the avatar alone. It is the engineering discipline required to make a multi-stage local interaction fast, understandable, and recoverable.</p>
+          <div><div class="eyebrow mono">05 / Operating lessons</div><h2 id="lessons-title">What the build proved.</h2></div>
+          <p>The point of the public endpoint is not to show motion. It is to preserve decisions and make the next action obvious.</p>
         </div>
         <div class="lessons">
-          <article class="lesson"><strong>Local does not mean simple.</strong><p>Private systems still need timeouts, readiness, bounded retries, and truthful degraded states.</p></article>
-          <article class="lesson"><strong>Voice is a pipeline.</strong><p>Recognition, generation, synthesis, playback, and animation each need their own contract.</p></article>
-          <article class="lesson"><strong>The interface is telemetry.</strong><p>Listening, thinking, speaking, unavailable, and recovering states should communicate reality.</p></article>
-          <article class="lesson"><strong>Streaming changes perception.</strong><p>Beginning useful output early matters more to a conversation than optimizing one isolated total.</p></article>
-          <article class="lesson"><strong>A green build is not acceptance.</strong><p>Real audio, visible avatar transitions, and recovery behavior must actually be exercised.</p></article>
-          <article class="lesson"><strong>Public artifacts need threat models.</strong><p>You can show architecture and judgment without exposing private implementation details.</p></article>
+          <article class="lesson"><strong>Small surfaces compound.</strong><p>A route, pane, and read model can be accepted independently before the runtime surface is ready.</p></article>
+          <article class="lesson"><strong>Rollback is part of delivery.</strong><p>The known-good artifact stays protected while a new runtime path is investigated.</p></article>
+          <article class="lesson"><strong>Healthy backend ≠ usable Desktop.</strong><p>Backend readiness and WindowServer presence do not prove AX/CUA or renderer acceptance.</p></article>
+          <article class="lesson"><strong>Public documentation needs a threat model.</strong><p>Evidence can be useful without publishing secrets, private endpoints, machine metadata, or internal routing.</p></article>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="wrap final">
-        <div><div class="eyebrow mono">Dylan Walls · AI systems builder</div><h2>Useful AI is engineered at the boundaries.</h2><p>I build where models, interfaces, automation, and operations meet—and I care whether the result can be understood, verified, and trusted by the person using it.</p></div>
-        <div class="final-actions">
-          <a class="button primary" href="Dylan_Walls_Public_Resume-v2.pdf">Read my résumé ↗</a>
-          <a class="button" href="https://github.com/Outlaw-Intelligence">GitHub ↗</a>
-          <a class="button" href="https://www.linkedin.com/in/dylan-walls-6b634a3b6">LinkedIn ↗</a>
-          <a class="button" href="airi-case-study.md">Technical narrative ↗</a>
+    <section aria-labelledby="final-title">
+      <div class="wrap">
+        <div class="final">
+          <div>
+            <div class="eyebrow mono">Current endpoint</div>
+            <h2 id="final-title">The public build is live. The private promotion gate is honest.</h2>
+            <p>Outlaw Intelligence has a stable, reviewable public record of the accepted command-center work. The remaining Desktop runtime issue is explicitly held for a separate fix; no hardware product changes are implied by this page.</p>
+          </div>
+          <div class="final-actions">
+            <a class="button primary" href="https://github.com/Outlaw-Intelligence/outlaw-audit">Open repository ↗</a>
+            <a class="button" href="airi-case-study.md">Read AIRI case study ↗</a>
+            <a class="button" href="Dylan_Walls_Public_Resume-v2.pdf">View résumé ↗</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap footer-inner"><span>© Dylan Walls · Public engineering portfolio</span><span class="mono">AIRI upstream: moeru-ai · Core test lane: local-first</span></div>
+    <div class="wrap footer-inner">
+      <span>© 2026 Outlaw Intelligence · Dylan Walls</span>
+      <span>Sanitized public engineering record · No private runtime configuration published</span>
+    </div>
   </footer>
+
+  <script>
+    (() => {
+      const buttons = [...document.querySelectorAll('[data-filter]')]
+      const cards = [...document.querySelectorAll('[data-state]')]
+      const apply = (filter) => {
+        buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)))
+        cards.forEach((card) => { card.hidden = filter !== 'all' && card.dataset.state !== filter })
+      }
+      buttons.forEach((button) => button.addEventListener('click', () => apply(button.dataset.filter)))
+    })()
+  </script>
 </body>
 </html>

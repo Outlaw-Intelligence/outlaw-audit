@@ -1,49 +1,42 @@
-# AIRI — Local-First Voice Companion Case Study
+# Outlaw Intelligence — Public Engineering Record
 
-A public, sanitized engineering case study documenting how **Dylan Walls** integrated, customized, and hardened the open-source [AIRI](https://github.com/moeru-ai/airi) project into a responsive local voice-and-avatar experience.
+This repository publishes the sanitized public build record for Outlaw Intelligence systems work.
 
-**Live site:** [outlaw-intelligence.github.io/outlaw-audit](https://outlaw-intelligence.github.io/outlaw-audit/)
+**Live public view:** https://outlaw-intelligence.github.io/outlaw-audit/
 
-## Attribution
+## Current artifact
 
-AIRI is an open-source project created by **moeru-ai**. Dylan did not create AIRI. This repository documents his surrounding integration and reliability work; it does not redistribute AIRI source code or assets.
+The root GitHub Pages site is the **Outlaw Command Center public build record**. It presents the accepted plugin foundation, read-only operational models, evidence gates, and the exact runtime boundary that remains held.
 
-## Engineering scope
+The page is intentionally dependency-free and self-contained. Its small filter interaction is local-only; it does not connect to private hardware, gateways, credentials, or runtime services.
 
-- Recovered and verified the desktop workspace and application build.
-- Hardened onboarding and provider-detection behavior.
-- Connected streamed local conversation through LM Studio.
-- Kept speech recognition, conversation, speech synthesis, and avatar playback as observable stages.
-- Integrated persistent local Whisper transcription and local Qwen speech synthesis.
-- Verified visible avatar speech and lip-sync state transitions.
-- Added health, readiness, timeout, recovery, and graceful-degradation boundaries.
+## What is documented
 
-## Local development evidence
+- Phase 1: supported plugin shell, route, navigation, and pane.
+- Phase 2: accepted read-only profile, session, cron, and skill summaries.
+- Runtime acceptance: backend and WindowServer evidence passed, while AX/CUA renderer acceptance remains blocked.
+- Rollback and safety boundaries used to preserve the known-good live artifact.
+- Public-safe architecture without secrets, private paths, ports, prompts, logs, or machine metadata.
 
-| Stage | Observed result |
-|---|---:|
-| Short transcription | ~0.25 s |
-| First visible streamed chat content | ~0.27 s |
-| Short synthesized audio response | ~0.40 s |
+## What is not claimed
 
-These are bounded observations from local development tests—not universal benchmarks. Results vary with hardware, model, input length, runtime state, and configuration.
+The public page does **not** claim that the Hermes Desktop AX/CUA runtime issue is fixed or that the held Task 3.1 artifact has been promoted. The private product on Dylan's hardware is not changed by this repository update.
+
+## Files
+
+- [`index.html`](index.html) — public command-center build record and static interaction.
+- [`outlaw-command-center-case-study.md`](outlaw-command-center-case-study.md) — accessible technical narrative.
+- [`airi-case-study.md`](airi-case-study.md) — separate AIRI local-first voice companion case study.
+- [`Dylan_Walls_Public_Resume-v2.pdf`](Dylan_Walls_Public_Resume-v2.pdf) — public résumé.
 
 ## Public-safety boundary
 
-This repository intentionally excludes credentials, private prompts, personal memory, machine paths, ports, service definitions, logs, provider secrets, internal routing, runtime state, and upstream AIRI source/assets.
+This repository excludes credentials, tokens, passwords, private prompts, personal memory, local machine paths, ports, service definitions, runtime logs, private fleet topology, and upstream AIRI source/assets.
 
-## Contents
+## Attribution
 
-- [`index.html`](index.html) — self-contained GitHub Pages case study
-- [`airi-case-study.md`](airi-case-study.md) — accessible technical narrative
-- [`Dylan_Walls_Public_Resume-v2.pdf`](Dylan_Walls_Public_Resume-v2.pdf) — public résumé
-
-## Public links
-
-- [AIRI upstream project](https://github.com/moeru-ai/airi)
-- [Dylan Walls on LinkedIn](https://www.linkedin.com/in/dylan-walls-6b634a3b6)
-- [Outlaw Intelligence on GitHub](https://github.com/Outlaw-Intelligence)
+The AIRI case study documents integration work around the open-source [AIRI project by moeru-ai](https://github.com/moeru-ai/airi). Dylan Walls did not create AIRI.
 
 ---
 
-This is a portfolio artifact, not a deployment guide. No private runtime configuration is published here.
+© 2026 Outlaw Intelligence · Dylan Walls
