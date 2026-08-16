@@ -22,7 +22,7 @@ Start here:
 - [`olympus/security.md`](olympus/security.md) — repository, renderer, profile, network, model, audio, and release lockdown.
 - [`olympus/acceptance.md`](olympus/acceptance.md) — evidence gates before an avatar lane can be called live.
 - [`olympus/avatar.schema.json`](olympus/avatar.schema.json) — manifest contract.
-- [`olympus/avatars/`](olympus/avatars/) — sanitized Zeus, Odin, and Thor manifests.
+- [`olympus/avatars/`](olympus/avatars/) — sanitized Zeus and Odin manifests plus the user-provided Thor PNG preserved byte-for-byte.
 - [`olympus/architecture.mmd`](olympus/architecture.mmd) — system flow diagram.
 
 Validate the public contract locally:
